@@ -11,31 +11,22 @@
 </template>
 
 <script>
+import { onBeforeMount } from '@vue/runtime-core';
+
 import HeaderComponent from './components/HeaderComponent.vue';
 import FooterComponent from './components/FooterComponent.vue';
 
 export default {
+    setup() {
+        onBeforeMount(() => document.body.classList.add('page'))
+        onBeforeMount(() => document.body.classList.add('dark'))
+        
+        document.title = 'Curso EAD com Vue.js 3 - Especializa TI'
+    },
+
     components: { 
         HeaderComponent,
         FooterComponent
-    },
-
-    props: {
-        
-    },
-
-    data() {
-        return {
-
-        }
-    },
-
-    created() {
-
-    },
-
-    methods: {
-
     },
 }
 </script>
